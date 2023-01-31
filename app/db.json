@@ -1,0 +1,46 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "name 1",
+        "price": 3150.12312412,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium commodi"
+      },
+      {
+        "id": 2,
+        "name": "name 2",
+        "price": 3150.12312412,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium commodi"
+      },
+      {
+        "id": 3,
+        "name": "name 3",
+        "price": 3150.12312412,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium commodi"
+      },
+      {
+        "id": 4,
+        "name": "name 4",
+        "price": 3150.12312412,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium commodi"
+      },
+      {
+        "id": 5,
+        "name": "name 5",
+        "price": 3150.12312412,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium commodi"
+      },
+      {
+        "id": 6,
+        "name": "name 6",
+        "price": 3150.12312412,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium commodi"
+      },
+      {
+        "id": 7,
+        "name": "name 7",
+        "price": 3150.12312412,
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium commodi"
+      }
+    ]
+}
