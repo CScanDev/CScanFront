@@ -3,10 +3,10 @@ import { ref, onMounted } from "vue";
 import Search from "@/components/Search.vue";
 import Catalog from "@/components/Catalog.vue";
 import api from "@/api/index";
-import type { IUser } from "@/models/IUser";
+import type { IProduct } from "@/models/IProduct";
 
 // state
-const allUsers = ref<IUser[]>([]);
+const allProducts = ref<IProduct[]>([]);
 const searchValue = ref<string>("");
 
 onMounted(async () => {
@@ -15,7 +15,7 @@ onMounted(async () => {
 
 // methods
 const getData = async () => {
-  allUsers.value = await api.getUsers(searchValue.value);
+  allProducts.value = await api.getUsers(searchValue.value);
 };
 
 const findUser = (value: string) => {
@@ -27,6 +27,6 @@ const findUser = (value: string) => {
 <template>
   <main>
     <Search @on-search="findUser" />
-    <Catalog :users="allUsers" />
+    <Catalog :products="allProducts" />
   </main>
 </template>

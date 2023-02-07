@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Card from './Card.vue';
-import type { IUser } from "@/models/IUser"
+import type { IProduct } from "@/models/IProduct";
 
 const props = defineProps<{
-    users: IUser[]
+    products: IProduct[]
 }>()
 </script>
 
@@ -11,9 +11,9 @@ const props = defineProps<{
   <div class="catalog">
     <div class="catalog-container">
       <Card 
-        v-for="user in users"
-        :key="user.id"
-        :user="user"
+        v-for="product in products"
+        :key="product.id"
+        :product="product"
       />   
     </div>
   </div>
