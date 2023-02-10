@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { IProduct } from "@/models/IProduct";
+import type { IUser } from "@/models/IUser"
 
 defineProps<{
-  product: IProduct
+  user: IUser
 }>();
 </script>
 
 <template>
 <div class="card">
   <div class="card-block">
-    <h3 class="name">{{ product.title }}</h3>
-    <p class="price">{{ product.price }}</p>
-    <p class="description">{{ product.duration }}</p>
+    <h3 class="name"><!--{{ product_data.name }}-->{{ user.name }}</h3>
+    <p class="price">Username: <!--{{ product_data.price }}-->{{ user.username }}</p>
+    <p class="description"><!--{{ product_data.description }}--> {{ user.phone }}</p>
   </div>
 </div>
 </template>

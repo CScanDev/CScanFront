@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import IconSearch from "@/components/Icons/IconSearch.vue";
-
-defineEmits(["onSearch"]);
+import { useRouter } from "vue-router";
 
 // state
 const searchValue = ref<string>("");
+const router = useRouter();
+
+//methods
+const onSearch = () => {
+  router.push({name: 'search', query: { 'product': searchValue.value}})
+}
 </script>
 
 <template>
@@ -17,7 +22,7 @@ const searchValue = ref<string>("");
         class="input-line"
         placeholder="Search"
       />
-      <IconSearch @click="$emit('onSearch', searchValue)" />
+      <IconSearch @click="onSearch"/>
     </div>
   </div>
 </template>
