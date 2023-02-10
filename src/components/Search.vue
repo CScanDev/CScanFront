@@ -9,7 +9,7 @@ const router = useRouter();
 
 //methods
 const onSearch = () => {
-  router.push({name: 'search', query: { 'product': searchValue.value}})
+  router.push({name: 'search', query: { 'query': searchValue.value}})
 }
 </script>
 
