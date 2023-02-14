@@ -1,4 +1,4 @@
-import { HTTP } from "./index"
+/*import { HTTP } from "./index"
 
 enum EUserServiceRoutes {
     GetUsers = '/users',
@@ -27,4 +27,4 @@ export default({
           console.log(e)
       }
   }
-});
+});*/

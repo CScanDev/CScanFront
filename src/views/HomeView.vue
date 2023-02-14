@@ -2,7 +2,7 @@
 import { ref, onMounted } from "vue";
 import Search from "@/components/Search.vue";
 import Catalog from "@/components/Catalog.vue";
-import UserService from "@/api/UserService";
+//import UserService from "@/api/UserService";
 import type { IUser } from "@/models/IUser";
 
 // state
@@ -15,7 +15,7 @@ onMounted(async () => {
 
 // methods
 const getData = async () => {
-  allUsers.value = await UserService.getUsers(searchValue.value)
+  //allUsers.value = await UserService.getUsers(searchValue.value)
   //allUsers.value = await api.getUsers(searchValue.value);
 };
 
