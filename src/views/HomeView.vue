@@ -2,7 +2,6 @@
 import { ref, onMounted } from "vue";
 import Search from "@/components/Search.vue";
 import Catalog from "@/components/Catalog.vue";
-//import UserService from "@/api/UserService";
 import type { IUser } from "@/models/IUser";
 
 // state
