@@ -1,16 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import IconSearch from "@/components/Icons/IconSearch.vue";
-import { useRouter } from "vue-router";
 
 // state
 const searchValue = ref<string>("");
-const router = useRouter();
-
-//methods
-const onSearch = () => {
-  router.push({name: 'search', query: { 'query': searchValue.value}})
-}
 </script>
 
 <template>
@@ -22,7 +15,10 @@ const onSearch = () => {
         class="input-line"
         placeholder="Search"
       />
-      <IconSearch @click="onSearch"/>
+      <RouterLink 
+        :to="`${searchValue}`"
+        class="rl"
+      ><IconSearch /></RouterLink>
     </div>
   </div>
 </template>
@@ -46,6 +42,10 @@ const onSearch = () => {
     outline: none;
     border-radius: 40px;
     color: gray;
+  }
+
+  .rl {
+    background-color: #fff;
   }
 
   .search-btn {
