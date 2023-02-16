@@ -15,10 +15,7 @@ const searchValue = ref<string>("");
         class="input-line"
         placeholder="Search"
       />
-      <RouterLink 
-        :to="`${searchValue}`"
-        class="rl"
-      ><IconSearch /></RouterLink>
+      <RouterLink :to="`${searchValue}`" class="rl"><IconSearch /></RouterLink>
     </div>
   </div>
 </template>

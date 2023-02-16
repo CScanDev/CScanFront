@@ -10,16 +10,19 @@ const route = useRoute();
 const users = ref<IUser[]>([]);
 const isLoading = ref(false);
 const products = ref<IProduct[]>([]);
+const searchValue = ref<string>("");
 
 onMounted(() => {
-  const value = route.query.product;
-  getData(value as string);
+  //const value = route.query.product;
+  searchValue.value = route.params.searchValue as string;
+  SearchService.getSearchData(searchValue.value as string);
+  //getData(value as string);
 });
 
 // methods
 const getData = async (searchValue: string) => {
   isLoading.value = true;
-  users.value = await SearchService.getSearchData(searchValue);
+  products.value = await SearchService.getSearchData(searchValue);
   isLoading.value = false;
 };
 </script>
