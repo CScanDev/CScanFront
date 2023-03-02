@@ -16,7 +16,7 @@ onMounted(() => {
   //const value = route.query.product;
   searchValue.value = route.params.searchValue as string;
   SearchService.getSearchData(searchValue.value as string);
-  //getData(value as string);
+  getData(searchValue.value);
 });
 
 // methods
