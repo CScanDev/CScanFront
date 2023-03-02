@@ -5,7 +5,7 @@ export default {
     try {
       const response = await HTTP.get(`/api/search/${searchValue}`, {
         headers: {
-          Prefer: `code=200, example=Example ${searchValue}`,
+          Prefer: `code=200, example=Example ${encodeURIComponent(searchValue)}`,
         },
       }); // params string
       return response.data;
