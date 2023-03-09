@@ -2,12 +2,13 @@
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import SearchService from "@/api/SearchService";
-import type { IUser } from "@/models/IUser";
+//import type { IUser } from "@/models/IUser";
+import ListProduct from "@/components/ListProduct.vue";
 import type { IProduct } from "@/models/IProduct";
 
 // composables
 const route = useRoute();
-const users = ref<IUser[]>([]);
+//const users = ref<IUser[]>([]);
 const isLoading = ref(false);
 const products = ref<IProduct[]>([]);
 const searchValue = ref<string>("");
@@ -31,9 +32,7 @@ const getData = async (searchValue: string) => {
   <div>
     <div v-if="isLoading">loading</div>
     <div v-else>
-      <div v-for="product in products">
-        {{ product }}
-      </div>
+      <ListProduct :products="products" />
     </div>
   </div>
 </template>
