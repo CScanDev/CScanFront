@@ -32,7 +32,15 @@ const getData = async (searchValue: string) => {
   <div>
     <div v-if="isLoading">loading</div>
     <div v-else>
-      <ListProduct :products="products" />
+      <!--ListProduct :products="products" />-->
+      <div class="list">
+        <div class="card-block" v-for="product in products" :key="product.id">
+          <h2 class="title">{{ product.title }}</h2>
+          <p class="link">{{ product.link }}</p>
+          <p class="duration">{{ product.duration }}</p>
+          <p class="price">{{ product.price }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>

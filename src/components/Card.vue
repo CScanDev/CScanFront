@@ -14,7 +14,7 @@ defineProps({
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .card-block{
   width: 300px;
   height: 300px;

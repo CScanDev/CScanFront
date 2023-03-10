@@ -14,7 +14,7 @@ defineProps({
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .list {
   width: 900px;
   margin: 0 auto;
