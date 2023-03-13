@@ -1,38 +1,48 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import {  onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import SearchService from "@/api/SearchService";
+import Search from "@/components/Search.vue";
 //import type { IUser } from "@/models/IUser";
-import ListProduct from "@/components/ListProduct.vue";
 import type { IProduct } from "@/models/IProduct";
 
-// composables
+// state
 const route = useRoute();
 //const users = ref<IUser[]>([]);
 const isLoading = ref(false);
 const products = ref<IProduct[]>([]);
-const searchValue = ref<string>("");
+//const searchValue = ref<string>("");
 
-onMounted(() => {
+/*onMounted(() => {
   //const value = route.query.product;
   searchValue.value = route.params.searchValue as string;
+  console.log(searchValue.value);
   SearchService.getSearchData(searchValue.value as string);
   getData(searchValue.value);
-});
+});*/
+
+/*const sendData = () => {
+  searchValue.value = route.params.searchValue as string;
+  console.log(searchValue.value);
+  SearchService.getSearchData(searchValue.value as string);
+  getData(searchValue.value);
+};*/
 
 // methods
-const getData = async (searchValue: string) => {
+const getData = async () => {
   isLoading.value = true;
-  products.value = await SearchService.getSearchData(searchValue);
+  const value = route.params.searchValue as string;
+  products.value = await SearchService.getSearchData(value);
+  console.log(products.value);
   isLoading.value = false;
 };
 </script>
 
 <template>
   <div>
+    <Search @on-send-data="getData" />
     <div v-if="isLoading">loading</div>
     <div v-else>
-      <!--ListProduct :products="products" />-->
       <div class="list">
         <div class="card-block" v-for="product in products" :key="product.id">
           <h2 class="title">{{ product.title }}</h2>

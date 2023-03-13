@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import Search from "@/components/Search.vue";
-import { RouterView } from "vue-router";
+import SearchView from "./SearchView.vue";
 </script>
 
 <template>
   <main>
-    <Search />
-    <RouterView />
+    <SearchView />
   </main>
 </template>

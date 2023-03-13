@@ -3,7 +3,8 @@ import { ref } from "vue";
 import IconSearch from "@/components/Icons/IconSearch.vue";
 
 // state
-const searchValue = ref<string>("");
+const searchValue = ref<String>("");
+defineEmits(["onSendData"]);
 </script>
 
 <template>
@@ -15,7 +16,13 @@ const searchValue = ref<string>("");
         class="input-line"
         placeholder="Search"
       />
-      <RouterLink :to="`${searchValue}`" class="rl"><IconSearch /></RouterLink>
+      <RouterLink
+        :to="`${searchValue}`"
+        @click="$emit('onSendData'), (searchValue = '')"
+        class="rl"
+      >
+        <IconSearch />
+      </RouterLink>
     </div>
   </div>
 </template>
