@@ -4,7 +4,7 @@ export default {
   async getSearchData(searchValue: string) {
     try {
       const response = await HTTP.get(
-        `${encodeURIComponent(searchValue)}`,
+        `/api/search/${encodeURIComponent(searchValue)}`,
         {
           headers: {
             Prefer: `code=200,·example=Example·${encodeURIComponent(
@@ -19,5 +19,3 @@ export default {
     }
   },
 };
-
-//api/search/
