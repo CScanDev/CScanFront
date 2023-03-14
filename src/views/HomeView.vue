@@ -40,7 +40,7 @@ const getData = async () => {
       <div class="list">
         <div class="card-block" v-for="product in products" :key="product.id">
           <h2 class="title">{{ product.title }}</h2>
-          <a :src="product.link" class="link card-block__text">Перейти</a>
+          <a :href="product.link" class="link card-block__text">Перейти</a>
           <p class="duration card-block__text">{{ product.duration }}</p>
           <p class="price card-block__text">{{ product.price }}</p>
         </div>
