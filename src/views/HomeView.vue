@@ -25,6 +25,7 @@ const getData = async () => {
       <div class="search-block">
         <input
           v-model="searchValue"
+          @keyup.enter="getData"
           type="text"
           class="input-line"
           placeholder="Search"
@@ -39,7 +40,7 @@ const getData = async () => {
       <div class="list">
         <div class="card-block" v-for="product in products" :key="product.id">
           <h2 class="title">{{ product.title }}</h2>
-          <p class="link card-block__text">{{ product.link }}</p>
+          <a :src="product.link" class="link card-block__text">Перейти</a>
           <p class="duration card-block__text">{{ product.duration }}</p>
           <p class="price card-block__text">{{ product.price }}</p>
         </div>
@@ -114,6 +115,11 @@ const getData = async () => {
       background: #fcf6f6;
       font-weight: 700;
       margin: 20px;
+    }
+
+    .link {
+      text-decoration: none;
+      cursor: pointer;
     }
   }
 }
