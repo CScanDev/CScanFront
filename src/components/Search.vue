@@ -4,7 +4,15 @@ import IconSearch from "@/components/Icons/IconSearch.vue";
 
 // state
 const searchValue = ref<String>("");
-defineEmits(["onSendData"]);
+const emits = defineEmits(["update:modelValue"]);
+const props = defineProps({
+  modelchValue: {
+    type: String,
+    default: "",
+  },
+});
+
+const updateInput = (event: any) => emits(["update:modelValue"], console.log(event.target.value));
 </script>
 
 <template>
@@ -16,13 +24,9 @@ defineEmits(["onSendData"]);
         class="input-line"
         placeholder="Search"
       />
-      <RouterLink
-        :to="`${searchValue}`"
-        @click="$emit('onSendData'), (searchValue = '')"
-        class="rl"
-      >
+      <div @click=" (searchValue = '')" class="rl">
         <IconSearch />
-      </RouterLink>
+      </div>
     </div>
   </div>
 </template>
