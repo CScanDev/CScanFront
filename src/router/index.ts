@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import SearchView from "../views/SearchView.vue";
+import UserCourses from "../views/UserCoursesView.vue";
 import HomeViewVue from "@/views/HomeView.vue";
 
 const router = createRouter({
@@ -11,10 +11,9 @@ const router = createRouter({
       component: HomeViewVue,
     },
     {
-      path: "/:searchValue",
-      name: "search",
-      component: SearchView,
-      alias: "/:searchValue",
+      path: "/UserCourses",
+      name: "coureses",
+      component: UserCourses,
     },
   ],
 });
